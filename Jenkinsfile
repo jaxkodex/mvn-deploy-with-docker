@@ -8,8 +8,6 @@ node {
     }
 
     stage('Create Image') {
-        docker.image('docker:stable').inside {
-            sh 'docker info'
-        }
+        def app = docker.build('demo/web-app')
     }
 }
